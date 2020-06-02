@@ -2,12 +2,14 @@
 #
 # Exercise 1.27
 def portfolio_cost(path):
-    data=open(path,'r')
-    headers=data.readline()
-    tc=0
-    for i in data:
-        tc=(int(i.split(',')[1])*float(i.split(',')[2]))+tc
-    return tc
+    try:
+        data=open(path,'r')
+        headers=data.readline()
+        tc=0
+        for i in data:
+            tc=(int(i.split(',')[1])*float(i.split(',')[2]))+tc
+        return tc
+    except:
+        file is not found
 
-tc=portfolio_cost('Data/portfolio.csv')
-print(tc)
+portfolio_cost('path')
